@@ -1,9 +1,11 @@
 Koshar::Application.routes.draw do
-  get "static_pages/home"
-  get "static_pages/about"
-  get "static_pages/listings"
-  get "static_pages/modular"
-  get "static_pages/contact"
+  get "users/new"
+  root 'static_pages#home'
+  match '/about',       to: 'static_pages#about',     via: 'get'
+  match '/listings',     to: 'static_pages#listings',  via: 'get'
+  match '/modular',     to: 'static_pages#modular',   via: 'get'
+  match '/contact',     to: 'static_pages#contact',   via: 'get'
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
