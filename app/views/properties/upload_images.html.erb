@@ -1,0 +1,17 @@
+<% provide(:title, "Upload Images") %>
+
+<h1>Upload Images</h1>
+
+<%= form_tag ({action: :upload}, multipart: true) do %>
+  <%= file_field_tag 'picture' %>
+<% end %>
+
+<!--<p><lablel for ="upload_images">Select Images</lablel> :
+<%= file_field 'upload','datafile' %></p>
+<%= submit_tag "Upload" %>
+<%= end %> -->
+
+<!-- <%= form_tag upload_images_path, multipart: true do %>
+    <%= file_field_tag :img %>
+    <%= submit_tag "Upload" %> -->
+<% end %>

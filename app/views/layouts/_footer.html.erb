@@ -6,7 +6,11 @@
 	</small>
     <nav>
     	<ul>
-    	  <li><%= link_to "Admin", '#' %></li>
+          <% if signed_in? %>
+            <li><%= link_to "Sign out", signout_path, method: "delete" %></li>
+          <% else %>
+    	  <li><%= link_to "Sign In", signin_path %></li>
+          <% end %>
     	</ul>
     </nav>
 </footer>

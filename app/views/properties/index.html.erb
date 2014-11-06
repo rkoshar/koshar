@@ -1,0 +1,17 @@
+<% provide(:title, 'Property Listings') %>
+<h1>Property Listings</h1>
+
+<ul class="properties">
+  <% @properties.each do |property| %>
+    <li>
+      <%= link_to image_tag("/assets/#{property.MLS}_1.jpg", :class => "img_preview"), property %>
+      <%= link_to property.MLS, property %>
+      <%= property.StreetAddress %>
+      <%= property.StreetName %>
+      <%= property.StreetSuffix %>,
+      <%= property.City %>,
+      <%= property.State %>
+      <%= property.ZIP %>
+    </li>
+  <% end %>
+</ul>

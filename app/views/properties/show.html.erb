@@ -1,0 +1,8 @@
+<% provide(:title, @property.MLS.to_s) %>
+
+<h1>MLS #<%= @property.MLS %></h1>
+<h2><%= @property.StreetAddress %>
+    <%= @property.StreetName %>
+    <%= @property.StreetSuffix %>,
+    <%= @property.City %>,
+    <%= @property.State %></h2>

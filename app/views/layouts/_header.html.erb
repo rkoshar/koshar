@@ -9,6 +9,20 @@
               <li><%= link_to "Listings", listings_path %></li>
               <li><%= link_to "Modular Homes", modular_path %></li>
               <li><%= link_to "Contact Us", contact_path %></li>
+              <% if signed_in? %>
+              <li id="fat-menu" class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                  Admin <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu">
+                  <li><%= link_to "My Profile", current_user %></li>
+                  <li><%= link_to "Import Listings", import_prop_path %></li>
+                  <li><%= link_to "Manage Featured", "#" %></li>
+                  <li><%= link_to "Manage Properties", "#" %></li>
+                  <li><%= link_to "Add User", "#" %></li>
+                  <% end %>
+                </ul>
+              </li>
             </ul>
           </nav>
         </div>

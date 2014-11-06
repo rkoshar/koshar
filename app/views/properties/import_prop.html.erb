@@ -1,0 +1,8 @@
+<% provide(:title, "Import Listings") %>
+
+<h1>Import Listings</h1>
+
+<%= form_tag import_properties_path, multipart: true do %>
+    <%= file_field_tag :file %>
+    <%= submit_tag "Import CSV" %>
+<% end %>
