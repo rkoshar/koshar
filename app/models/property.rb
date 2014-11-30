@@ -1,5 +1,5 @@
 class Property < ActiveRecord::Base
-  has_many :FeaturedProperties
+  has_many :Images
   require 'csv'
 
 

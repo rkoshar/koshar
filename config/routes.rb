@@ -1,14 +1,22 @@
 Koshar::Application.routes.draw do
   resources :users
+  resources :properties do
+    collection { post :import }
+  end
   resources :sessions, only: [:new, :create, :destroy]
   
-  root 'static_pages#home'
+  root to: 'static_pages#home'
   match '/about',       to: 'static_pages#about',     via: 'get'
-  match '/listings',    to: 'static_pages#listings',  via: 'get'
+  match '/listings',    to: 'properties#index',       via: 'get'
   match '/modular',     to: 'static_pages#modular',   via: 'get'
   match '/contact',     to: 'static_pages#contact',   via: 'get'
+  match '/import_prop',      to: 'properties#import_prop',      via: 'get'
+  match '/upload_images',      to: 'properties#upload_images',      via: 'get'
   match '/signin',      to: 'sessions#new',           via: 'get'
   match '/signout',     to: 'sessions#destroy',       via: 'delete'
+  match '/images',      to: 'properities#index', via: 'get'
+
+  match '/jquery',      to: 'properties#jquery',      via: 'get'
 
   
   # The priority is based upon order of creation: first created -> highest priority.

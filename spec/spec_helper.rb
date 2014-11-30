@@ -42,7 +42,7 @@ Spork.prefork do
     # the seed, which is printed after each run.
     #     --seed 1234
     config.order = "random"
-    # config.include Capybara::DSL
+    config.include Capybara::DSL
   end
 end
 
